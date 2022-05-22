@@ -1,0 +1,17 @@
+.container {
+  position: relative;
+  width: 50%;
+}
+
+/*responsive image*/
+.container img {
+  width: 100%;
+  height: auto;
+}
+
+/*Place the button in the middle of the container/images*/
+.container .btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
