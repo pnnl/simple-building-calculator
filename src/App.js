@@ -16,11 +16,28 @@ function App() {
       <div className="App container py-6" style={{ textAlign: "left" }}>
         <NavBar />
         <Routes>
-          <Route path="/project" element={<Project />}></Route>
-          <Route path="/design/:scenarioId" element={<Design />}></Route>
-          <Route path="/scenario" element={<Scenario />}></Route>
-          <Route path="/visual" element={<Visualizer />}></Route>
-          <Route path="/" element={<Navigate replace to="/project" />}></Route>
+          <Route
+            path="/simple-building-calculator/project"
+            element={<Project />}
+          ></Route>
+          <Route
+            path="/simple-building-calculator/design/:scenarioId"
+            element={<Design />}
+          ></Route>
+          <Route
+            path="/simple-building-calculator/scenario"
+            element={<Scenario />}
+          ></Route>
+          <Route
+            path="/simple-building-calculator/visual"
+            element={<Visualizer />}
+          ></Route>
+          <Route
+            path="/simple-building-calculator/"
+            element={
+              <Navigate replace to="/simple-building-calculator/project" />
+            }
+          ></Route>
         </Routes>
       </div>
     </BrowserRouter>

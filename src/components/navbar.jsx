@@ -29,11 +29,11 @@ const NavBar = () => {
     <React.Fragment>
       <Navbar bg="dark" fixed="top" variant="dark">
         <Container>
-        <Navbar.Brand href="/project"><img src="favicon.ico" style={{"width": "32px", "marginBottom": "7px"}}></img>  Simple Commercial Building Calculator</Navbar.Brand>
+        <Navbar.Brand href="/simple-building-calculator/project"><img src="favicon.ico" style={{"width": "32px", "marginBottom": "7px"}}></img>  Simple Commercial Building Calculator</Navbar.Brand>
         <Nav className="me-auto">
-          <NavLink to="/project" className={isActive => "nav-link" + (!isActive? "unselected":"")}>Project</NavLink>
-          <NavLink to="/scenario" className={isActive => "nav-link" + (!isActive? "unselected":"")}>Scenario</NavLink>
-          <NavLink to="/visual" className={isActive => "nav-link" + (!isActive? "unselected":"")}>Visualization</NavLink>
+          <NavLink to="/simple-building-calculator/project" className={isActive => "nav-link" + (!isActive? "unselected":"")}>Project</NavLink>
+          <NavLink to="/simple-building-calculator/scenario" className={isActive => "nav-link" + (!isActive? "unselected":"")}>Scenario</NavLink>
+          <NavLink to="/simple-building-calculator/visual" className={isActive => "nav-link" + (!isActive? "unselected":"")}>Visualization</NavLink>
         </Nav>
         {fileConditionRender()}
         </Container>

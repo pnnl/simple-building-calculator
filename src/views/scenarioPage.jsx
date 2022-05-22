@@ -54,12 +54,12 @@ function Scenario() {
     }
     if(bldgType==="" || climateZone===""){
        //navigate back to project
-      navigate("/project")
+      navigate("/simple-building-calculator/project")
     }
   }, [state.cases])
 
   const createNewScenario = (e, base) => {
-    let linkDesign = '/design/' + genID()
+    let linkDesign = '/simple-building-calculator/design/' + genID()
     setCurrentWorkingScenario(e)
     setCurrentBaseCase(base["value"])
     navigate(linkDesign)
