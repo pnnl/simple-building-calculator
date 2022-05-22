@@ -124,7 +124,7 @@ export default function ScenarioOpportunity(){
                             <p>
                                 The vertical line represents the project baseline case, while the orange bars to the right show increased performance metric (e.g., EUI) with the worst case, and bars to the left show reduced performance metric with the best case.
                             </p>
-                            <img src="/img/diagram_intro_specs.PNG" alt="intro of the tornado diagram" style={{width:"100%", height:"auto"}}/>
+                            <img src="/simple-building-calculator/img/diagram_intro_specs.PNG" alt="intro of the tornado diagram" style={{width:"100%", height:"auto"}}/>
                             <p className={"text-justify"}>Sample tornado diagram</p>
                             <ul>
                                 <li><strong>Measures:</strong> x-axis contains a list of measures that apply to the design</li>

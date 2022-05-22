@@ -154,7 +154,7 @@ function Scenario() {
               </Card.Header>
               <Card.Body>
                 <Container style={{position: "relative", width: "50%"}}>
-                  <img src="/img/bldg_background.png" alt="building" style={{width:"100%", height:"auto"}}/>
+                  <img src="/simple-building-calculator/img/bldg_background.png" alt="building" style={{width:"100%", height:"auto"}}/>
                   <CustomModal
                     buttonVariant={"secondary"}
                     buttonSize={"lg"}

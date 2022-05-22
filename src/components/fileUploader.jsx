@@ -75,7 +75,7 @@ function FileUploader(props){
     <div>
       <div style={thumb} key={file.name}>
         <div style={thumbInner}>
-          <img src={"/img/json.icon.PNG"} style={img}/>
+          <img src={"/simple-building-calculator/img/json.icon.PNG"} style={img}/>
         </div>
       </div>
       <p><strong>{file.path}</strong>-{file.size} bytes</p>

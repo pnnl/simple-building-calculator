@@ -108,10 +108,10 @@ function Home() {
                 <p><strong>Simple Building Calculator (SBC)</strong> is developed to generate relatively accurate and interactive modeling results for small to medium size commercial building performance evaluations. </p>
                 <p>SBC can evaluate whole-building or single measure savings in new or existing buildings, compare measure package choices, or provide simplified performance modeling for energy codes and utility incentives. </p>
                 <p>The tool combines physical (annual whole building prototype simulation) and statistical modeling techniques to predict annual energy performance. It supports a variety of building characteristics for envelope, HVAC, and lighting with parameters ranging from vintage to max tech configurations, as well as support for single-zone and simple multi-zone HVAC systems. </p>
-                <img src="/img/diagram_intro.PNG" alt="intro of the tornado diagram" style={{width:"100%", height:"auto"}}/>
+                <img src="/simple-building-calculator/img/diagram_intro.PNG" alt="intro of the tornado diagram" style={{width:"100%", height:"auto"}}/>
                 <p><i><mark>Sample of the sensitivity analysis diagram</mark></i></p>
                 <p>The Simple Building Calculator was designed to provide immediate feedback for otherwise computationally intensive tasks like measure comparison, development of multiple measure package combinations, or verification that measures meet efficiency targets—all with the goal of providing a tool for quick annual energy simulation of simple commercial buildings.</p>
-                <img src="/img/compare_with_standard.PNG" alt="Compare with standards" style={{width:"100%", height:"auto"}}/>
+                <img src="/simple-building-calculator/img/compare_with_standard.PNG" alt="Compare with standards" style={{width:"100%", height:"auto"}}/>
                 <p><i><mark>Compare results with the Standard</mark></i></p>
               </div>
             </animated.div>
