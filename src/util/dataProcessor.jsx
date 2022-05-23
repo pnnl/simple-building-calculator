@@ -150,12 +150,12 @@ export function getDefaultParamDataForStandard(value, buildingType, climateZone,
 //this function prepares the tableData
 //tableData should be scenarioList
 export function makeResponsibleTableData(tableData, floorArea){
-  let baseCase = 22.79 //kBtu/sqft - temperary solution
+  let baseCase = 37.26 //TODO kBtu/sqft - temperary solution
   let tableDataArray = tableData['cases']
   let tableData2DArray = createArray(4, tableDataArray.length) //need to add a row for title (4)
   tableDataArray.forEach(function(scenario, i){
     tableData2DArray[0][i] = scenario['name']
-    tableData2DArray[1][i] = fixed_2(scenario['eui'] * floorArea)
+    tableData2DArray[1][i] = format_num_to_string(fixed_2(scenario['eui'] * floorArea))
     tableData2DArray[2][i] = scenario['eui']
     tableData2DArray[3][i] = convert_num_to_percent((baseCase - scenario['eui']) / baseCase * 100)
   })

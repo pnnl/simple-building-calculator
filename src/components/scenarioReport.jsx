@@ -156,7 +156,7 @@ export default function ScenarioReport(){
         <>
             <div className={"icard"}>
                 <div className={"icard-title"}>
-                    <h3>Senario Report</h3>
+                    <h3>Scenario Report</h3>
                 </div>
                 <div className={"icard-content"}>
                     <Row>
@@ -331,7 +331,7 @@ export default function ScenarioReport(){
                                 <Col>
                                     <div className={"icard card text-white bg-primary"}>
                                         <div className={"card-body"}>
-                                            <h2>{alg.calculateCool(bldgType.value, climateZone.value, scenarioState[selectedScenario.value], electricityConversionFactor)}</h2>
+                                            <h2>{dataUtils.format_num_to_string(alg.calculateCool(bldgType.value, climateZone.value, scenarioState[selectedScenario.value], electricityConversionFactor))}</h2>
                                             <small>Cool ({dataUtils.getAnalysisTypeUnit(analysisType.value)})</small>
                                         </div>
                                     </div>
@@ -341,7 +341,7 @@ export default function ScenarioReport(){
                                 <Col>
                                     <div className={"icard card text-white bg-info"}>
                                         <div className={"card-body"}>
-                                            <h2>{alg.calculateGen(bldgType.value, climateZone.value, scenarioState[selectedScenario.value], electricityConversionFactor)}</h2>
+                                            <h2>{dataUtils.format_num_to_string(alg.calculateGen(bldgType.value, climateZone.value, scenarioState[selectedScenario.value], electricityConversionFactor))}</h2>
                                             <small>General ({dataUtils.getAnalysisTypeUnit(analysisType.value)})</small>
                                         </div>
                                     </div>
@@ -351,7 +351,7 @@ export default function ScenarioReport(){
                                 <Col>
                                     <div className={"icard card text-white bg-success"}>
                                         <div className={"card-body"}>
-                                            <h2>{alg.calculateAux(bldgType.value, climateZone.value, scenarioState[selectedScenario.value], electricityConversionFactor)}</h2>
+                                            <h2>{dataUtils.format_num_to_string(alg.calculateAux(bldgType.value, climateZone.value, scenarioState[selectedScenario.value], electricityConversionFactor))}</h2>
                                             <small>Auxiliary ({dataUtils.getAnalysisTypeUnit(analysisType.value)})</small>
                                         </div>
                                     </div>
@@ -361,7 +361,7 @@ export default function ScenarioReport(){
                                 <Col>
                                     <div className={"icard card text-white bg-warning"}>
                                         <div className={"card-body"}>
-                                            <h2>{alg.calculateELHeat(bldgType.value, climateZone.value, scenarioState[selectedScenario.value], electricityConversionFactor)}</h2>
+                                            <h2>{dataUtils.format_num_to_string(alg.calculateELHeat(bldgType.value, climateZone.value, scenarioState[selectedScenario.value], electricityConversionFactor))}</h2>
                                             <small>Heating (Electricity) ({dataUtils.getAnalysisTypeUnit(analysisType.value)})</small>
                                         </div>
                                     </div>
@@ -371,7 +371,7 @@ export default function ScenarioReport(){
                                 <Col>
                                     <div className={"icard card text-white bg-danger"}>
                                         <div className={"card-body"}>
-                                            <h2>{alg.calculateNGHeat(bldgType.value, climateZone.value, scenarioState[selectedScenario.value], electricityConversionFactor)}</h2>
+                                            <h2>{dataUtils.format_num_to_string(alg.calculateNGHeat(bldgType.value, climateZone.value, scenarioState[selectedScenario.value], electricityConversionFactor))}</h2>
                                             <small>Heating (Natural Gas) ({dataUtils.getAnalysisTypeUnit(analysisType.value)})</small>
                                         </div>
                                     </div>
