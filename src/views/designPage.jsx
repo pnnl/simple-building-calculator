@@ -15,11 +15,11 @@ import {useSpring, animated} from "react-spring"
 const tableInit = {
   base: {
     rowName: "base",
-    "Electricity-Auxiliary": 1.07,
-    "Electricity-Cooling": 0.6,
-    "Electricity-General": 18.27,
-    "Electricity-Heating": 12.46,
-    "Natural Gas-Heating": 4.03,
+    "Electricity-Auxiliary": 2.35,
+    "Electricity-Cooling": 1.08,
+    "Electricity-General": 21.58,
+    "Electricity-Heating": 7.32,
+    "Natural Gas-Heating": 4.93,
     total: 0.0,
   },
   design: {
