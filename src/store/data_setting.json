@@ -91,7 +91,7 @@
             "id": "Leak",
             "type": "float",
             "unit": "cfm/ft2",
-            "min": 0.15,
+            "min": 0.025,
             "max": 2.0,
             "default": 1.8,
             "tool_tip": "Design leakage cfm per envelope area @ 0.3 in wg",
