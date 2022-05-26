@@ -1,4 +1,4 @@
-# Open source license (BSD-style):
+# Open source license (BSD):
 
 ## Simple Building Calculator
 
