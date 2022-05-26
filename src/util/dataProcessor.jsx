@@ -280,6 +280,47 @@ export function downloadDataFromLocal(){
   return dataStorage
 }
 
+//get Electric conversion factor by analysis type
+//requires conversion rate and floor area to perform the analysis
+export function getElectricConversionFactor(analysisType, floorArea, sourceToSiteRate, electricToCarbonRate, electricityRate){
+  let tempElectricFactor = 1.0
+  //need to update the base case.
+  if(analysisType === 'source_eui'){
+    tempElectricFactor = 1 / sourceToSiteRate / getConversionFactor("kwh", "kbtu")
+  }else if(analysisType === 'site_energy'){
+    tempElectricFactor = floorArea
+  }else if(analysisType === 'source_energy'){
+    tempElectricFactor = floorArea / sourceToSiteRate / getConversionFactor("kwh", "kbtu")
+  }else if(analysisType === 'carbon_emission'){
+    tempElectricFactor = electricToCarbonRate / getConversionFactor('kwh','kbtu')
+  }else if(analysisType === 'utility_cost'){
+    tempElectricFactor = electricityRate / getConversionFactor('kwh','kbtu')
+  }else{
+    tempElectricFactor = 1.0
+  }
+  return tempElectricFactor
+}
+
+export function getNatGasConversionFactor(analysisType, floorArea, sourceToSiteRate, natGasToCarbonRate, natGasRate){
+  let tempNatGasFactor = 1.0
+
+  //need to update the base case.
+  if(analysisType === 'source_eui'){
+    tempNatGasFactor = 1 / sourceToSiteRate / getConversionFactor("therm", "kbtu")
+  }else if(analysisType === 'site_energy'){
+    tempNatGasFactor = floorArea
+  }else if(analysisType === 'source_energy'){
+    tempNatGasFactor = floorArea / sourceToSiteRate / getConversionFactor("therm", "kbtu")
+  }else if(analysisType === 'carbon_emission'){
+    tempNatGasFactor = natGasToCarbonRate / getConversionFactor('therm','kbtu')
+  }else if(analysisType === 'utility_cost'){
+    tempNatGasFactor = natGasRate / getConversionFactor('therm','kbtu')
+  }else{
+    tempNatGasFactor = 1.0
+  }
+  return tempNatGasFactor
+}
+
 //HELPER REACT FUNCTIONS
 // extract key value pair data (options) from the database
 function extractKeyValuePair(dataKey, bldgType=null, climateZone=null){

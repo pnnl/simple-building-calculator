@@ -79,30 +79,8 @@ export default function ScenarioCompare(){
         if(value['value'] !== analysisType['value']){
             setAnalysisType(value)
           }
-          let tempElectricFactor = 1.0
-          let tempNatGasFactor = 1.0
-      
-          //need to update the base case.
-          if(value['value'] === 'source_eui'){
-            tempElectricFactor = 1 / electricitySourceToSite['value'] / dataUtils.getConversionFactor("kwh", "kbtu")
-            tempNatGasFactor = 1 / natGasSourceToSite['value'] / dataUtils.getConversionFactor("therm", "kbtu")
-          }else if(value['value'] === 'site_energy'){
-            tempElectricFactor = floorArea
-            tempNatGasFactor = floorArea
-          }else if(value['value'] === 'source_energy'){
-            tempElectricFactor = floorArea / electricitySourceToSite['value'] / dataUtils.getConversionFactor("kwh", "kbtu")
-            tempNatGasFactor = floorArea / natGasSourceToSite['value'] / dataUtils.getConversionFactor("therm", "kbtu")
-          }else if(value['value'] === 'carbon_emission'){
-            tempElectricFactor = electricityCarbon['value'] / dataUtils.getConversionFactor('kwh','kbtu')
-            tempNatGasFactor = natGasCarbon['value'] / dataUtils.getConversionFactor('therm','kbtu')
-          }else if(value['value'] === 'utility_cost'){
-            tempElectricFactor = electricityRate['value'] / dataUtils.getConversionFactor('kwh','kbtu')
-            tempNatGasFactor = natGasRate['value'] / dataUtils.getConversionFactor('therm','kbtu')
-          }else{
-            tempElectricFactor = 1.0
-            tempNatGasFactor = 1.0
-          }
-
+          let tempElectricFactor = dataUtils.getElectricConversionFactor(value["value"], floorArea, electricitySourceToSite["value"],electricityCarbon["value"], electricityRate["value"])
+          let tempNatGasFactor = dataUtils.getNatGasConversionFactor(value["value"], floorArea, natGasSourceToSite["value"], natGasCarbon["value"], natGasRate["value"])
           let tempPlotData = generatePlotData([], tempElectricFactor, tempNatGasFactor)
           setPlotData(tempPlotData)
     }
