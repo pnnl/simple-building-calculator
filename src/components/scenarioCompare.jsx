@@ -142,7 +142,7 @@ export default function ScenarioCompare(){
                                         )}`}
                                     download={`${project}.csv`}
                                     className={"pull-right"}
-                                    >Download Session</Button>
+                                    >Download Scenarios</Button>
                             </div>
                             <div className={"icard-content"}>
                                 <CustomResponsiveTable
