@@ -271,6 +271,47 @@ export function checkCaseName(targetName, data, scenarioID){
   return checkCaseNameHelper(targetName, listOfNames)
 }
 
+// combine the scenario_list and scenarios and convert the data into a csv format
+export function downloadDesignScenarioToLocal(scenario_list, scenarios){
+  let scenario_list_cases = scenario_list.cases
+  //clean up
+  const result = []
+  let id
+  let sys
+  for (id in scenario_list_cases){
+    let caseResult = {}
+    let scenario_case = scenario_list_cases[id]
+    for(sys in scenario_case){
+      if(sys === "id"){
+        //get the scenario data
+        let scenario = scenarios[scenario_case[sys]]
+        let sId
+        for(sId in scenario){
+          if(sId === "HVAC"){
+            caseResult[sId] = scenario[sId]["label"]
+          } else if(sId==="standard"){
+            //skip, do nothing
+          } else{
+            caseResult[sId] = scenario[sId]
+          }
+        }
+      }else{
+        caseResult[sys]=scenario_case[sys]
+      }
+    }
+    result.push(caseResult)
+  }
+
+  const replacer = (key, value) => value === null? '': value 
+  const header = Object.keys(result[0])
+  const csv = [
+    header.join(","), //header row first
+    ...result.map(row => header.map(fieldName => JSON.stringify(row[fieldName], replacer)).join(','))
+  ].join('\r\n')
+
+  return csv
+}
+
 //local storage related functions
 export function downloadDataFromLocal(){
   let dataStorage = {}

@@ -1,6 +1,6 @@
 import React, {useState, useContext} from "react";
 import {ProjectContext } from "../store/index";
-import {Card, Row, Col, ListGroup, Form, FormControl, Container, InputGroup, ButtonGroup, ToggleButton, Table} from "react-bootstrap"
+import {Card, Row, Col, ListGroup, Form, FormControl, Container, InputGroup, ButtonGroup, ToggleButton, Table, DropdownButton, Dropdown} from "react-bootstrap"
 import {ScenarioListContext} from "../store/index";
 import CustomListGroupItem from "../components/customListGroupItem";
 import {useNavigate} from "react-router-dom"
@@ -16,13 +16,6 @@ const scenarioStatus=[
   {name: 'Active', value: '1'},
   {name: 'All', value: '2'}
 ]
-
-/*
-utility function that sorts the list of scenarios in a time order
-*/
-function order(a, b) {
-  return (new Date(b.props.valueStatus.time) - new Date(a.props.valueStatus.time))
-}
 
 function Scenario() {
   //SET UPS
@@ -40,6 +33,7 @@ function Scenario() {
   const[currentState, setCurrentState] = useState(state.cases)
   //search related
   const[searchWords, setSearchWords] = useState("")
+  const[sortWords, setSortWords] = useState("time")
   const[displayStatusValue, setDisplayStatusValue] = useState("1")
   const[selectedCase, setSelectedCase] = useState({})
 
@@ -67,6 +61,19 @@ function Scenario() {
 
   const handleMouseClick = (selectedCase) => {
     setSelectedCase(selectedCase)
+  }
+
+  /*
+  utility function that sorts the list of scenarios in a time order
+  */
+  function order(a, b) {
+    if(sortWords === "time"){
+      return (new Date(b.props.valueStatus.time) - new Date(a.props.valueStatus.time))
+    }else if(sortWords === "name"){
+      return b.props.valueStatus.name - a.props.valueStatus.name
+    }else if(sortWords === "eui"){
+      return b.props.valueStatus.eui - a.props.valueStatus.eui
+    }
   }
 
   function searchScenarioList(){
@@ -202,6 +209,16 @@ function Scenario() {
                   <Col md={10}>
                     <Form className="d-flex">
                       <InputGroup>
+                        <DropdownButton
+                          variant="outline-secondary"
+                          title={`Sort by: ${sortWords}`}
+                          id="scenario_sort"
+                          onSelect={(event) => setSortWords(event)}
+                        >
+                          <Dropdown.Item eventKey="time">Time</Dropdown.Item>
+                          <Dropdown.Item eventKey="eui">EUI</Dropdown.Item>
+                          <Dropdown.Item eventKey="name">Name</Dropdown.Item>
+                        </DropdownButton>
                         <FormControl
                           type="search"
                           placeholder="Search"

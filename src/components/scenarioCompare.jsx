@@ -2,8 +2,8 @@ import React, {useContext, useState} from 'react'
 import CustomBarChart from "../components/customBarChart";
 import CustomDisplayCard from "../components/customDisplayCard";
 import CustomResponsiveTable from './customResponsiveTable';
-import {ProjectContext, ScenarioListContext, AdvancedConfigContext} from "../store/index";
-import { Row, Col } from "react-bootstrap";
+import {ProjectContext, ScenarioListContext, ScenarioContext, AdvancedConfigContext} from "../store/index";
+import { Row, Col, Button } from "react-bootstrap";
 import * as dataUtils from "../util/dataProcessor.jsx";
 import Select from "react-select"
 
@@ -23,8 +23,9 @@ const colorMap = {
 
 export default function ScenarioCompare(){
     //get global variables
-    const {floorArea} = useContext(ProjectContext)
+    const {floorArea, project} = useContext(ProjectContext)
     const [scenarioListState, scenarioListDispatch] = useContext(ScenarioListContext)
+    const [scenarios, scenariosDispath] = useContext(ScenarioContext)
     const {electricityRate,natGasRate,electricityCarbon,natGasCarbon,electricitySourceToSite,natGasSourceToSite} = React.useContext(AdvancedConfigContext)
 
     const analysisTypeArray = dataUtils.getAnalysisType()
@@ -133,6 +134,15 @@ export default function ScenarioCompare(){
                         <div className={"icard"}>
                             <div className={"icard-title"}>
                                 <h3>Scenarios Detail</h3>
+                                <Button 
+                                    variant="success"
+                                    type="button"
+                                    href={`data:text/json;charset=utf-8, ${encodeURIComponent(
+                                        dataUtils.downloadDesignScenarioToLocal(scenarioListState, scenarios)
+                                        )}`}
+                                    download={`${project}.csv`}
+                                    className={"pull-right"}
+                                    >Download Scenarios</Button>
                             </div>
                             <div className={"icard-content"}>
                                 <CustomResponsiveTable
