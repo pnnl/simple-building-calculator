@@ -115,8 +115,8 @@ function Home() {
                 <p><i><mark>Compare results with the Standard</mark></i></p>
                 <br></br>
                 <h4>For detailed information:</h4>
-                <p>Nambiar, Chitra, and Reid Hart. "SIMPLE BUILDING CALCULATOR." In <i>ASHRAE Topical Conference Proceedings</i>, pp. 423-430. American Society of Heating, Refrigeration and Air Conditioning Engineers, Inc., 2020. <a href="#" onClick={window.open('/simple-building-calculator/doc/d-bsc20-c051.pdf')}>Read</a></p>
-                <p>Hart, Reid, Chitra Chandrasekharan Nambiar, Jeremiah Williams, and Michael Reiner. "An Energy Calculator for Simple Commercial Buildings." (2020). <a href="#" onClick={window.open('/simple-building-calculator/doc/143_0376_0549_000237.pdf')}>Read</a></p>
+                <p>Nambiar, Chitra, and Reid Hart. "SIMPLE BUILDING CALCULATOR." In <i>ASHRAE Topical Conference Proceedings</i>, pp. 423-430. American Society of Heating, Refrigeration and Air Conditioning Engineers, Inc., 2020. <a href="/simple-building-calculator/doc/d-bsc20-c051.pdf">Read</a></p>
+                <p>Hart, Reid, Chitra Chandrasekharan Nambiar, Jeremiah Williams, and Michael Reiner. "An Energy Calculator for Simple Commercial Buildings." (2020). <a href="/simple-building-calculator/doc/143_0376_0549_000237.pdf">Read</a></p>
               </div>
             </animated.div>
           </Col>
