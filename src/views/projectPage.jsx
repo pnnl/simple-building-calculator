@@ -105,14 +105,18 @@ function Home() {
                 <h3>Simple Building Calculator</h3>
               </div>
               <div className="icard-content">
-                <p><strong>Simple Building Calculator (SBC)</strong> is developed to generate relatively accurate and interactive modeling results for small to medium size commercial building performance evaluations. </p>
+                <p><strong>Simple Building Calculator (SBC)</strong> is a tool for small and simple commercial buildings to generate quick and interactive estimates of energy efficiency measures. </p>
                 <p>SBC can evaluate whole-building or single measure savings in new or existing buildings, compare measure package choices, or provide simplified performance modeling for energy codes and utility incentives. </p>
                 <p>The tool combines physical (annual whole building prototype simulation) and statistical modeling techniques to predict annual energy performance. It supports a variety of building characteristics for envelope, HVAC, and lighting with parameters ranging from vintage to max tech configurations, as well as support for single-zone and simple multi-zone HVAC systems. </p>
                 <img src="/simple-building-calculator/img/diagram_intro.PNG" alt="intro of the tornado diagram" style={{width:"100%", height:"auto"}}/>
                 <p><i><mark>Sample of the sensitivity analysis diagram</mark></i></p>
-                <p>The Simple Building Calculator was designed to provide immediate feedback for otherwise computationally intensive tasks like measure comparison, development of multiple measure package combinations, or verification that measures meet efficiency targets—all with the goal of providing a tool for quick annual energy simulation of simple commercial buildings.</p>
+                <p>The Simple Building Calculator is designed to provide immediate feedback for otherwise computationally intensive tasks like measure comparison, development of multiple measure package combinations, or verification that measures meet efficiency targets—all with the goal of providing a tool for quick annual energy simulation of simple commercial buildings.</p>
                 <img src="/simple-building-calculator/img/compare_with_standard.PNG" alt="Compare with standards" style={{width:"100%", height:"auto"}}/>
                 <p><i><mark>Compare results with the Standard</mark></i></p>
+                <br></br>
+                <h4>For detailed information:</h4>
+                <p>Nambiar, Chitra, and Reid Hart. "SIMPLE BUILDING CALCULATOR." In <i>ASHRAE Topical Conference Proceedings</i>, pp. 423-430. American Society of Heating, Refrigeration and Air Conditioning Engineers, Inc., 2020. <a href="#" onClick={window.open('/simple-building-calculator/doc/d-bsc20-c051.pdf')}>Read</a></p>
+                <p>Hart, Reid, Chitra Chandrasekharan Nambiar, Jeremiah Williams, and Michael Reiner. "An Energy Calculator for Simple Commercial Buildings." (2020). <a href="#" onClick={window.open('/simple-building-calculator/doc/143_0376_0549_000237.pdf')}>Read</a></p>
               </div>
             </animated.div>
           </Col>

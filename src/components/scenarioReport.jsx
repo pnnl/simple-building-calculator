@@ -25,18 +25,18 @@ export default function ScenarioReport(){
     const calculatedElectricValues = (scenarioID) => {
         // calculate the metrics based on selected analysis type
         let scenario = scenarioState[scenarioID]
-        let total_value = alg.calculateAux(bldgType.value, climateZone.value, scenario, 1.0) + 
-        alg.calculateCool(bldgType.value, climateZone.value, scenario, 1.0) + 
-        alg.calculateELHeat(bldgType.value, climateZone.value, scenario, 1.0) + 
-        alg.calculateGen(bldgType.value, climateZone.value, scenario, 1.0)
-        return dataUtils.fixed_2(total_value)
+        let total_value = alg.calculateAux(bldgType.value, climateZone.value, scenario, electricityConversionFactor) + 
+        alg.calculateCool(bldgType.value, climateZone.value, scenario, electricityConversionFactor) + 
+        alg.calculateELHeat(bldgType.value, climateZone.value, scenario, electricityConversionFactor) + 
+        alg.calculateGen(bldgType.value, climateZone.value, scenario, electricityConversionFactor)
+        return total_value
     }
 
     const calculatedNatGasValues = (scenarioID) => {
         // calculate the metrics based on selected analysis type
         let scenario = scenarioState[scenarioID]
-        let total_value = alg.calculateNGHeat(bldgType.value, climateZone.value, scenario, 1.0)
-        return dataUtils.fixed_2(total_value)
+        let total_value = alg.calculateNGHeat(bldgType.value, climateZone.value, scenario, natGasConversionFactor)
+        return total_value
     }
 
     const calculatedValues = (scenarioID) => {
@@ -150,7 +150,7 @@ export default function ScenarioReport(){
                             ></Select>
                         </Col>
                         <Col xs={6}>
-                            <h6>Analysis Type</h6>
+                            <h6>Performance Metrics</h6>
                             <Select 
                                 options={[...analysisTypeArray]} 
                                 name={"analysis_type"} 
@@ -258,7 +258,7 @@ export default function ScenarioReport(){
             </div>
             <div className={"icard"}>
                 <div className={"icard-title"}>
-                    <h3>Fuel Usage</h3>
+                    <h3>{analysisType.label} by Energy Source Breakdown</h3>
                 </div>
                 <div className={"icard-content"}>
                     <Row>
@@ -269,8 +269,8 @@ export default function ScenarioReport(){
                                         <div className={"icard-content"}>
                                             <h2>{dataUtils.format_num_to_string(
                                                 dataUtils.fixed_2(
-                                                    calculatedElectricValues(selectedScenario.value) * floorArea * dataUtils.getConversionFactor("kbtu", "kwh")))}</h2>
-                                            <small>Electricity (kWh)</small>
+                                                    calculatedElectricValues(selectedScenario.value)))}</h2>
+                                            <small>Electricity ({dataUtils.getAnalysisTypeUnit(analysisType.value)})</small>
                                         </div>
                                     </div>
                                 </Col>
@@ -281,8 +281,8 @@ export default function ScenarioReport(){
                                         <div className={"icard-content"}>
                                             <h2>{dataUtils.format_num_to_string(
                                                 dataUtils.fixed_2(
-                                                    calculatedNatGasValues(selectedScenario.value) * floorArea * dataUtils.getConversionFactor("kbtu", "therm")))}</h2>
-                                            <small>Natural Gas (therm)</small>
+                                                    calculatedNatGasValues(selectedScenario.value)))}</h2>
+                                            <small>Natural Gas ({dataUtils.getAnalysisTypeUnit(analysisType.value)})</small>
                                         </div>
                                     </div>
                                 </Col>
@@ -302,7 +302,7 @@ export default function ScenarioReport(){
             </div>
             <div className={"icard"}>
                 <div className={"icard-title"}>
-                    <h3>{analysisType.label} Breakdowns</h3>
+                    <h3>{analysisType.label} by End-Use Breakdown</h3>
                 </div>
                 <div className={"icard-content"}>
                     <Row>

@@ -327,16 +327,15 @@ export function getElectricConversionFactor(analysisType, floorArea, sourceToSit
   let tempElectricFactor = 1.0
   //need to update the base case.
   if(analysisType === 'source_eui'){
-    tempElectricFactor = 1 / sourceToSiteRate / getConversionFactor("kwh", "kbtu")
+    tempElectricFactor = sourceToSiteRate
   }else if(analysisType === 'site_energy'){
     tempElectricFactor = floorArea
   }else if(analysisType === 'source_energy'){
-    tempElectricFactor = floorArea / sourceToSiteRate / getConversionFactor("kwh", "kbtu")
+    tempElectricFactor = floorArea * sourceToSiteRate
   }else if(analysisType === 'carbon_emission'){
-    tempElectricFactor = electricToCarbonRate / getConversionFactor('kwh','kbtu')
+    tempElectricFactor = electricToCarbonRate
   }else if(analysisType === 'utility_cost'){
-    tempElectricFactor = electricityRate / getConversionFactor('kwh','kbtu')
-  }else{
+    tempElectricFactor = electricityRate
     tempElectricFactor = 1.0
   }
   return tempElectricFactor
@@ -347,15 +346,15 @@ export function getNatGasConversionFactor(analysisType, floorArea, sourceToSiteR
 
   //need to update the base case.
   if(analysisType === 'source_eui'){
-    tempNatGasFactor = 1 / sourceToSiteRate / getConversionFactor("therm", "kbtu")
+    tempNatGasFactor = sourceToSiteRate
   }else if(analysisType === 'site_energy'){
     tempNatGasFactor = floorArea
   }else if(analysisType === 'source_energy'){
-    tempNatGasFactor = floorArea / sourceToSiteRate / getConversionFactor("therm", "kbtu")
+    tempNatGasFactor = floorArea * sourceToSiteRate
   }else if(analysisType === 'carbon_emission'){
-    tempNatGasFactor = natGasToCarbonRate / getConversionFactor('therm','kbtu')
+    tempNatGasFactor = natGasToCarbonRate
   }else if(analysisType === 'utility_cost'){
-    tempNatGasFactor = natGasRate / getConversionFactor('therm','kbtu')
+    tempNatGasFactor = natGasRate
   }else{
     tempNatGasFactor = 1.0
   }

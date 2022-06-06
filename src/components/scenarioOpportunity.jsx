@@ -78,7 +78,7 @@ export default function ScenarioOpportunity(){
                 <div className={"icard-content"}>
                     <Row>
                         <Col>
-                            <h6>Analysis Type</h6>
+                            <h6>Performance Metrics</h6>
                             <Select 
                                 options={[...analysisTypeArray]} 
                                 name={"analysis_type"} 
