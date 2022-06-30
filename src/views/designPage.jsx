@@ -302,6 +302,7 @@ function Design() {
             </CustomModal>
         </Col>
         <Col xs={6}>
+          <Link to="/scenario"><Button className="pull-right" variant="warning" id="exit" onClick={dispatchCombined} style={{marginRight:"26px"}}>Exit</Button></Link>
           <Button className="pull-right" variant="danger" id="cancel" onClick={()=>{if(window.confirm("Do you want to cancel your changes?")){navigate('/scenario')}}}>Cancel</Button>
           <Button className="pull-right" variant="success" id="save" onClick={dispatchCombined}>Save</Button>{' '}
         </Col>

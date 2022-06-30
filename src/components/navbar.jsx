@@ -34,6 +34,7 @@ const NavBar = () => {
           <NavLink to="/project" className={isActive => "nav-link" + (!isActive? "unselected":"")}>Project</NavLink>
           <NavLink to="/scenario" className={isActive => "nav-link" + (!isActive? "unselected":"")}>Scenario</NavLink>
           <NavLink to="/visual" className={isActive => "nav-link" + (!isActive? "unselected":"")}>Visualization</NavLink>
+          <NavLink to="/manual" className={isActive => "nav-link" + (!isActive? "unselected": "")}>Manual</NavLink>
         </Nav>
         {fileConditionRender()}
         </Container>
