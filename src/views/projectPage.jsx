@@ -84,14 +84,14 @@ function Home() {
         payLoad['unit'] = "kBtu/ft2-year"
         scenarioListDispatch({type:"add", payload: payLoad})
 
-        navigate('/simple-building-calculator/scenario')
+        navigate('/scenario')
     }else if(e.target.id === "update"){
         scenarioDispatch({type: "reset"})
         scenarioListDispatch({type: "reset"})
 
-        navigate('/simple-building-calculator/scenario')
+        navigate('/scenario')
     }else if(e.target.id === "continue"){
-      navigate('/simple-building-calculator/scenario')
+      navigate('/scenario')
     }
   };
 

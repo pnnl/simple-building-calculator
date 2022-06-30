@@ -18,11 +18,11 @@ function Visualizer() {
   useEffect(()=>{
     if(bldgType==="" || climateZone===""){
        //navigate back to project if the project is not initialized
-      navigate("/simple-building-calculator/project")
+      navigate("/project")
     }
     if(state.cases.length === 2){
       //navigate back to scenario page if project has no cases
-      navigate("/simple-building-calculator/scenario")
+      navigate("/scenario")
     }
   })
 
