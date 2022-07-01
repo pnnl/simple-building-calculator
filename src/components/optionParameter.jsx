@@ -26,7 +26,6 @@ export default function OptionParameter(props){
         <div className="row g-3">
             <div className="col-sm-12">
                 <h6 data-toggle="tooltip" data-placement="top" title={tooltips}>{header}</h6>
-                <hr></hr>
                 <Select options={[...options]} name={id} value={selectedOption} onChange={valueChangeHandler}></Select>
             </div>
         </div>

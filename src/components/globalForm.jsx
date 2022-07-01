@@ -203,7 +203,7 @@ export default function GlobalForm(props){
             return (<Button variant="outline-primary" size="lg" id="start" onClick={submitAction}>Start</Button>)
         }else if(scenarioListState['cases'].length > 0 || Object.keys(scenarioState)>0){
             return (<><Button variant="outline-success" size="lg" id="continue" onClick={submitAction}>Continue</Button>
-            <Button variant="outline-warning" size="lg" id="discard" onClick={submitAction}>Discard</Button></>)
+            <Button variant="outline-warning" size="lg" id="discard" onClick={submitAction}>New Project</Button></>)
         }else{
             return(<><Button variant="outline-info" size="lg" id="confirm" onClick={submitAction}>Confirm</Button></>)
         }

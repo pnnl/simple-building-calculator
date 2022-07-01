@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import {Row, Col, ToggleButton, ButtonGroup, InputGroup, FormControl} from 'react-bootstrap'
 import Slider from "./rangeSlider"
+import * as dataUtils from '../util/dataProcessor';
 
 export default function InputParameter(props){
 
@@ -23,17 +24,20 @@ export default function InputParameter(props){
 
     const valueChangeHandler = (e) => {
         let val = e.target.value
-        if(val.startsWith("0") && !val.endsWith(".") && val.length===2){
-            val = "0." + val.slice(1)
-        }
-        
+
         if(val.length === 0){
             val = "0"
         }
 
-        if(/^\d*\.?\d*$/.test(val)){
-            let output = parseFloat(val)
-            onValueChange(output, type, id)
+        if(val.endsWith(".") && val.split(".").length == 2){
+            let output = parseFloat(val.replaceAll(",",""))
+            let formated_output_str = dataUtils.format_num_to_string(output, 0)
+            onValueChange(formated_output_str+".", type, id)
+        }else if(/^[0-9.,]+$/.test(val)){
+            let digits = val.indexOf('.') > -1 ? val.split(".")[1].length : 0
+            let output = parseFloat(val.replaceAll(",",""))
+            let formated_output_str = dataUtils.format_num_to_string(output, digits)
+            onValueChange(formated_output_str, type, id)
         }
     }
 
@@ -42,7 +46,7 @@ export default function InputParameter(props){
         if(switchStatus==="true"){
             return (
                 <>
-                    <p><strong style={{marginLeft:"5px"}}>{min}</strong><strong className={"pull-right"} style={{marginRight:"5px"}}>{max}</strong></p>
+                    <p style={{marginTop:"12px"}}><strong style={{marginLeft:"5px"}}>{min}</strong><strong className={"pull-right"} style={{marginRight:"5px"}}>{max}</strong></p>
                     <Slider
                         value={value} 
                         onChange={onValueChange}
@@ -60,7 +64,7 @@ export default function InputParameter(props){
         }else{
             return(
                 <>
-                    <InputGroup>
+                    <InputGroup style={{marginTop:"20px", marginBottom: "10px"}}>
                         <InputGroup.Text><strong>{min}</strong></InputGroup.Text>
                             <FormControl id={id} value={inputText} onChange={valueChangeHandler}></FormControl>
                         <InputGroup.Text><strong>{max}</strong></InputGroup.Text>
@@ -99,7 +103,6 @@ export default function InputParameter(props){
                         </ButtonGroup>
                     </Col>
                 </Row>
-            <hr></hr>
                 {
                     conditionalRender()
                 }

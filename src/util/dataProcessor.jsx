@@ -4,8 +4,8 @@ export function convert_num_to_percent(num){
   return parseFloat(num).toFixed(1)+"%"
 }
 
-export function format_num_to_string(num){
-  return num.toLocaleString('en-US', {minimumFractionDigits: 2})
+export function format_num_to_string(num, digits=2){
+  return num.toLocaleString('en-US', {minimumFractionDigits: digits})
 }
 
 export function getSelectedScenarioInfo(scenarioList, selection){
