@@ -14,6 +14,12 @@ export function getSelectedScenarioInfo(scenarioList, selection){
   return selectedScenario
 }
 
+export function getScenarioNameByID(scenarioList, scenarioID){
+  // find and return a scenario name by its ID.
+  let selectedScenario = scenarioList.filter(scenario => scenario["id"] === scenarioID)
+  return selectedScenario.length > 0 ? selectedScenario[0]["name"] : null
+}
+
 export function getDefaultRates(rate){
   //get the utility metric rates
   return data["rates"][rate]

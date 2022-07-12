@@ -85,12 +85,20 @@ function Design() {
   //let defaultBaseCaseTemp = (scenarioListState.cases.length > 0)? {"value": scenarioListState.cases[0].id, "label": scenarioListState.cases[0].name}: {"value":"", "label": ""}
   //let defaultBaseCase = dataUtils.getDefaultDataForStandard('ashrae9012019', bldgType, climateZone)
   let defaultBaseCase = scenarioState[currentBaseCase]
+  // check if the design is in the existing cases, if so, update the current working scenario
+  let tempScenarioName = dataUtils.getScenarioNameByID(scenarioListState.cases, scenarioId)
+  if(tempScenarioName != null && currentWorkingScenario != tempScenarioName){
+    setCurrentWorkingScenario(tempScenarioName)
+  }else{
+    tempScenarioName = currentWorkingScenario
+  }
+
   //local state to set base case for generating tornado diagram
   //TODO 
   const analysisTypeArray = dataUtils.getAnalysisType()
   const [baseCase, setBaseCase] = useState(defaultBaseCase)
   const [dataArray, setDataArray] = useState(defaultArray)
-  const [scenarioName, setScenarioName] = useState(currentWorkingScenario)
+  const [scenarioName, setScenarioName] = useState(tempScenarioName)
   const [analysisType, setAnalysisType] = useState(analysisTypeArray[0])
   const [electricConvertFactor, setElectricConvertFactor] = useState(1.0)
   const [natGasConvertFactor, setNatGasConvertFactor] = useState(1.0)
