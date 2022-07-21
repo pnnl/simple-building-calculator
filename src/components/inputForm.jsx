@@ -9,7 +9,7 @@ import InputParameter from "./inputParameter"
 //this class hold the list of data
 export default function InputForm(props){
 
-    const {id, onOutputChange} = props
+    const {id, onOutputChange, name} = props
     //TODO keep it for now, maybe can remove it later.
     const [state, dispatch] = React.useContext(ScenarioContext)
     const {bldgType, climateZone} = React.useContext(ProjectContext)
@@ -72,7 +72,7 @@ export default function InputForm(props){
     }
 
     useEffect(()=>{
-        onOutputChange(dataArray, 'design')
+        onOutputChange(dataArray, 'design', name)
     }, [dataArray])
 
     return (

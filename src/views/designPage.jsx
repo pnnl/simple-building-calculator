@@ -113,12 +113,14 @@ function Design() {
   useEffect(()=>{
     if(scenarioName !== currentWorkingScenario){
       setCurrentWorkingScenario(scenarioName)
+      //Need to update the design scenario Name
+      handleOutputChange(dataArray, "design", scenarioName)
     }
   }, [scenarioName])
 
   
   //Updates graph
-  const updateGraph = (keyWord, output) => {
+  const updateGraph = (keyWord, output, name) => {
     //update the graph
     let x_array = [];
     let y_array = [];
@@ -130,7 +132,7 @@ function Design() {
     var trace = {
       x: x_array,
       y: y_array,
-      name: keyWord,
+      name: name,
       type: "bar",
     };
 
@@ -139,6 +141,9 @@ function Design() {
       //NESTED STATE UPDATE METHOD
       plotDataTemp[keyWord].x = x_array;
       plotDataTemp[keyWord].y = y_array;
+      if(name !== undefined){
+        plotDataTemp[keyWord].name = name;
+      }
       setPlotData(plotDataTemp);
     } else {
       //this code will only be called when initializing the page
@@ -164,7 +169,7 @@ function Design() {
 
   // output is the calculated energy consumption
   // keyWord is design or base
-  const handleOutputChange = (value, keyWord) => {
+  const handleOutputChange = (value, keyWord, name) => {
     //calculate the output:
     let output = {}
     if(keyWord === 'design'){
@@ -196,7 +201,7 @@ function Design() {
       }
       setBaseCase(newBaseCase)
     }
-    updateGraph(keyWord, output)
+    updateGraph(keyWord, output, name)
     
   };
 
@@ -254,7 +259,7 @@ function Design() {
   const handleChangeScenarioNameAndBaseCase = (e, baseObject) => {
     setScenarioName(e)
     let scenario = scenarioState[baseObject["value"]]
-    handleOutputChange(scenario, "base")
+    handleOutputChange(scenario, "base", baseObject["label"])
   }
 
   const handleChangeAnalysisType = (value) => {
@@ -285,11 +290,6 @@ function Design() {
     
     setElectricConvertFactor(tempElectricFactor)
     setNatGasConvertFactor(tempNatGasFactor)
-  }
-
-  //Updates the basecase
-  const baseCaseUpdate = (scenario_id) => {
-    handleOutputChange(scenario_id, 'base')
   }
 
   return (
@@ -325,6 +325,7 @@ function Design() {
                 id={scenarioId}
                 onOutputChange={handleOutputChange}
                 key={scenarioId}
+                name={scenarioName}
               />
               </Card.Body>
             </div>
