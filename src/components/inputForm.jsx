@@ -3,7 +3,7 @@ import OptionParameter from './optionParameter';
 import * as dataUtils from '../util/dataProcessor'
 import {ScenarioContext, ProjectContext} from "../store/index";
 import {getDefaultDataForStandard} from '../util/dataProcessor'
-import {Row, Col, Badge, ListGroup} from "react-bootstrap"
+import {ListGroup} from "react-bootstrap"
 import InputParameter from "./inputParameter"
 
 //this class hold the list of data

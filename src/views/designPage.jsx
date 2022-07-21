@@ -87,7 +87,7 @@ function Design() {
   let defaultBaseCase = scenarioState[currentBaseCase]
   // check if the design is in the existing cases, if so, update the current working scenario
   let tempScenarioName = dataUtils.getScenarioNameByID(scenarioListState.cases, scenarioId)
-  if(tempScenarioName != null && currentWorkingScenario != tempScenarioName){
+  if(tempScenarioName !== null && currentWorkingScenario !== tempScenarioName){
     setCurrentWorkingScenario(tempScenarioName)
   }else{
     tempScenarioName = currentWorkingScenario

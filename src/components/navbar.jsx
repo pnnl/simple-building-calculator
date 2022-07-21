@@ -11,7 +11,7 @@ const NavBar = () => {
   const {project} = useContext(ProjectContext)
 
   const fileConditionRender = () => {
-    if(scenarioListState!= undefined && "cases" in scenarioListState && scenarioListState.cases.length > 2){
+    if(scenarioListState!== undefined && "cases" in scenarioListState && scenarioListState.cases.length > 2){
       return (
         <Button 
         variant="success"
@@ -29,7 +29,7 @@ const NavBar = () => {
     <React.Fragment>
       <Navbar bg="dark" fixed="top" variant="dark">
         <Container>
-        <Navbar.Brand href="/simple-building-calculator"><img src="/simple-building-calculator/favicon.ico" style={{"width": "32px", "marginBottom": "7px"}}></img>  Simple Building Calculator</Navbar.Brand>
+        <Navbar.Brand href="/simple-building-calculator"><img src="/simple-building-calculator/favicon.ico" alt="" style={{"width": "32px", "marginBottom": "7px"}}></img>  Simple Building Calculator</Navbar.Brand>
         <Nav className="me-auto">
           <NavLink to="/project" className={isActive => "nav-link" + (!isActive? "unselected":"")}>Project</NavLink>
           <NavLink to="/scenario" className={isActive => "nav-link" + (!isActive? "unselected":"")}>Scenario</NavLink>

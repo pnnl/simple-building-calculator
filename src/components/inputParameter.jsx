@@ -20,7 +20,7 @@ export default function InputParameter(props){
         if(value !== inputText) {
             setInputText(value);
         }
-    },[value])
+    },[value, inputText])
 
     const valueChangeHandler = (e) => {
         let val = e.target.value
@@ -29,7 +29,7 @@ export default function InputParameter(props){
             val = "0"
         }
 
-        if(val.endsWith(".") && val.split(".").length == 2){
+        if(val.endsWith(".") && val.split(".").length === 2){
             let output = parseFloat(val.replaceAll(",",""))
             let formated_output_str = dataUtils.format_num_to_string(output, 0)
             onValueChange(formated_output_str+".", type, id)

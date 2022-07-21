@@ -66,11 +66,11 @@ export default function GlobalForm(props){
                 }
                 setElectricityCarbonState(electricCarbonRateNew)
             }else if(event.target.name === "natgas_carbon_rate"){
-                let natgasCarbonRaetNew = {
+                let natgasCarbonRateNew = {
                     ... natGasCarbonState,
                     "value": event.target.value
                 }
-                setNatGasCarbonState(natGasCarbonState)
+                setNatGasCarbonState(natgasCarbonRateNew)
             }else if(event.target.name === "electricity_source_to_site_rate"){
                 let electricSourceSiteRateNew = {
                     ... electricitySourceToSiteState,

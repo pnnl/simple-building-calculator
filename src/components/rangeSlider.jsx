@@ -186,6 +186,8 @@ class Slider extends Component {
         sliderValue = value - step < min ? min : value - step
         onChange && onChange(sliderValue, e)
         break
+      default:
+        break
     }
   };
 

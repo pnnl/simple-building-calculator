@@ -50,7 +50,7 @@ function Scenario() {
        //navigate back to project
       navigate("/project")
     }
-  }, [state.cases])
+  }, [state.cases, bldgType, climateZone])
 
   const createNewScenario = (e, base) => {
     let linkDesign = '/design/' + genID()

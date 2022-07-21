@@ -1,4 +1,4 @@
-import React, { useState, createContext} from 'react';
+import React, { createContext} from 'react';
 import { useLocalStorage } from 'react-use';
 import { useScenarioListReducer, initialListState } from './scenarioListReducer';
 import { useScenarioReducer, initialScenarioState } from './scenarioReducer';

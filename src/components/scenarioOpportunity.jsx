@@ -57,7 +57,7 @@ export default function ScenarioOpportunity(){
     useEffect(()=>{
         setSR1(createPlotData(maxTech))
         setSR2(createPlotData(worstCase))
-    }, [electricityConversionFactor, natGasConversionFactor, analysisType])
+    }, [electricityConversionFactor, natGasConversionFactor, analysisType, maxTech, worstCase])
 
     const handleOptionChanges = (value, e) => {
         if(e['name'] === 'analysis_type'){

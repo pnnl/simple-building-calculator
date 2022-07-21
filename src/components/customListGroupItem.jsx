@@ -7,7 +7,7 @@ import {genID, strTruncate} from '../util/strUtil'
 
 export default function CustomListGroupItem(props){
     const {valueStatus, displayStatus, handleMouseClick} = props
-    const [scenarioListState, scenarioListDispatch] = useContext(ScenarioListContext)
+    const [scenarioListSate, scenarioListDispatch] = useContext(ScenarioListContext)
     const [scenario, scenarioDispatch] = useContext(ScenarioContext)
     const [showScenario, setShowScenario] = useState(valueStatus.status)
 
@@ -27,7 +27,7 @@ export default function CustomListGroupItem(props){
         if(valueStatus.status !== showScenario){
             setShowScenario(valueStatus.status)
         }
-      }, [valueStatus.status])
+      }, [valueStatus.status, showScenario])
 
     const handleClick = (e) => {
         handleMouseClick(valueStatus)

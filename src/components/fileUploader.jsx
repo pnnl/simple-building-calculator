@@ -75,7 +75,7 @@ function FileUploader(props){
     <div>
       <div style={thumb} key={file.name}>
         <div style={thumbInner}>
-          <img src={"/simple-building-calculator/img/json.icon.PNG"} style={img}/>
+          <img src={"/simple-building-calculator/img/json.icon.PNG"} alt={""} style={img}/>
         </div>
       </div>
       <p><strong>{file.path}</strong>-{file.size} bytes</p>
@@ -84,7 +84,7 @@ function FileUploader(props){
   ));
 
   useEffect(() => {
-    if(acceptedFiles.length == 1 && jsonFile != acceptedFiles){
+    if(acceptedFiles.length === 1 && jsonFile !== acceptedFiles){
       let reader = new FileReader();
       reader.onload = function(e) {
         var contents = e.target.result;
@@ -92,7 +92,7 @@ function FileUploader(props){
       };
       reader.readAsText(acceptedFiles[0]);
     }
-  }, [acceptedFiles]);
+  }, [acceptedFiles, jsonFile]);
 
   const style = useMemo(() => ({
       ...baseStyle,
