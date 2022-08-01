@@ -4,6 +4,7 @@
   "homepage": "http://pnnl.github.io/simple-building-calculator",
   "private": true,
   "dependencies": {
+    "@fortawesome/free-solid-svg-icons": "^6.1.2",
     "@testing-library/jest-dom": "^5.15.0",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
