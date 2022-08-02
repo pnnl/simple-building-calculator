@@ -14,8 +14,8 @@ function App() {
   //RENDERS
   return (
     <BrowserRouter basename="/simple-building-calculator">
+      <NavBar />
       <div className="App container py-6" style={{ textAlign: "left" }}>
-        <NavBar />
         <Routes>
           <Route path="/project" element={<Project />}></Route>
           <Route path="/design/:scenarioId" element={<Design />}></Route>
