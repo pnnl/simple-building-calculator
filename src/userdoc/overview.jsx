@@ -15,7 +15,8 @@ export default function OverviewPage(){
             <p>The <strong>Simple Building Calculator (SBC)</strong> has several practical applications such as providing a quick energy estimate for interactive savings in simple buildings. While the tool is not intended for precise results, it will compare interactive impact of various measure combinations quickly and allow selection of packages of integrated design options for simple commercial buildings to achieve target levels of energy efficiency compared to a standard baseline design without custom simulation. These savings can be applied to energy codes, utility incentive programs, building rating programs, or advanced design efforts. </p>
             <hr></hr>
             <h5>Cite us</h5>
-            <p>...</p>
+            <p>Nambiar, Chitra, and Reid Hart. "SIMPLE BUILDING CALCULATOR." In <i>ASHRAE Topical Conference Proceedings</i>, pp. 423-430. American Society of Heating, Refrigeration and Air Conditioning Engineers, Inc., 2020. <a href="/simple-building-calculator/doc/d-bsc20-c051.pdf">Read</a></p>
+            <p>Hart, Reid, Chitra Chandrasekharan Nambiar, Jeremiah Williams, and Michael Reiner. "An Energy Calculator for Simple Commercial Buildings." (2020). <a href="/simple-building-calculator/doc/143_0376_0549_000237.pdf">Read</a></p>
             <p>The tool is developed and maintained by the Pacific Northwest National Laboratory (PNNL)</p>
         </>
     )

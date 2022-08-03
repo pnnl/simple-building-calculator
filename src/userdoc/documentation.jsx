@@ -3,6 +3,8 @@ import { ListGroup } from "react-bootstrap";
 import MainInterface from "./subdoc/mainInterface";
 import ProjectDoc from "./subdoc/projectDoc";
 import ScenarioDoc from "./subdoc/scenarioDoc";
+import ScenarioLeftHand from "./subdoc/scenarioLeftHand";
+import ScenarioRightHand from "./subdoc/scenarioRightHand";
 
 export default function DocumentationPage(){
 
@@ -15,6 +17,8 @@ export default function DocumentationPage(){
                 <ListGroup.Item as="li"><a href="#maininterface">Main interface</a></ListGroup.Item>
                 <ListGroup.Item as="li"><a href="#projectDoc">Project</a></ListGroup.Item>
                 <ListGroup.Item as="li"><a href="#scenarioDoc">Scenario</a></ListGroup.Item>
+                <ListGroup.Item as="li"><a href="#scenarioLeftHand">Scenario: Left</a></ListGroup.Item>
+                <ListGroup.Item as="li"><a href="#scenarioRightHand">Scenario: Right</a></ListGroup.Item>
             </ListGroup>
             <hr style={{marginTop: "30px", marginBottom: "30px"}}></hr>
             <div id="maininterface" style={{marginTop: "20px"}}>
@@ -31,7 +35,16 @@ export default function DocumentationPage(){
                 <ScenarioDoc></ScenarioDoc>
                 <a href="#scenarioDoc">Back</a>
             </div>
-            
+            <hr style={{marginTop: "30px", marginBottom: "30px"}}></hr>
+            <div id="scenarioLeftHand" style={{marginTop:"20px"}}>
+                <ScenarioLeftHand></ScenarioLeftHand>
+                <a href="#scenarioDoc">Back</a>
+            </div>
+            <hr style={{marginTop: "30px", marginBottom: "30px"}}></hr>
+            <div id="scenarioRightHand" style={{marginTop:"20px"}}>
+                <ScenarioRightHand></ScenarioRightHand>
+                <a href="#scenarioDoc">Back</a>
+            </div>
         </>
     )
 }

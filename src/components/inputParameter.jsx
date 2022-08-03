@@ -7,11 +7,11 @@ export default function InputParameter(props){
 
     const{header, id, type, value, min, max, step, tooltips, onValueChange} = props
     const[inputText, setInputText] = useState(value)
-    const[switchStatus, setSwitchStatus] = useState("true")
+    const[switchStatus, setSwitchStatus] = useState("false")
 
     const radios = [
-        { name: 'Slider', value: "true"},
         { name: 'Input', value: "false"},
+        { name: 'Slider', value: "true"},
       ];
 
     //use effect hook to modify the selected option and rerender this component 

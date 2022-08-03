@@ -5,7 +5,7 @@ export default function ProjectDoc(){
         <>  
             <h5>Project</h5>
             <p>The Project tab has two parts: </p>
-            <img src={"/simple-building-calculator/img/project_page.png"} alt="navigator" style={{height: "600px", marginBottom: "10px"}}/>
+            <img src={"/simple-building-calculator/img/project_page_small.png"} alt="navigator" style={{height: "600px", marginBottom: "10px"}}/>
             <p><strong>Simple Building Calculator: </strong> This part on the Left-Hand Side gives the user an overview of the SBC tool.</p>
             <p><strong>Project Info: </strong> This part on the Right-Hand Side is the main input section allowing the user to add information about their project. The inputs include "Project Name", "Building Type", "Climate Zone" and "Floor Area".</p>
             <p>The beta version currently allows: </p>
