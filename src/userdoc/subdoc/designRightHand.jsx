@@ -1,10 +1,11 @@
 import React from "react";
+import EndUseDoc from "./endUseDoc"
 
-export default function ScenarioRightHand(){
+export default function DesignRightHand(){
 
     return(
         <>
-            <h5>Scenario Right-Hand Side</h5>
+            <h5>Design Right-Hand Side</h5>
             <img src={"/simple-building-calculator/img/scenario_section_small.png"} style={{height: "600px"}} alt="scenario_section"/>
             <p>Metrics and visualization of the energy end-use for the scenario is provided both as a plot and table format. 
                 Plots can be downloaded and saved as a PNG and allow for some level of interaction within the tool in terms of features such as <span style={{fontFamily: "Courier New"}}>zoom</span>, <span style={{fontFamily: "Courier New"}}>pan </span>etc. 
@@ -19,7 +20,10 @@ export default function ScenarioRightHand(){
                 <li><strong>Carbon Emission: </strong></li>
                 <li><strong>Utility Cost: </strong></li>
             </ol>
-            
+            <img src={"/simple-building-calculator/img/scenario_right_metrics.png"} style={{width: "400px"}} alt="scenario_right_metrics"/>
+            <p>The energy end-use results for the simulations are aggregated into categories that were selected to combine end-use that are similarly affected by the independent parameters, for example combining fan and pump electricity consumption. </p>
+            <p>The energy end-use include: ELgen, ELcool, ELheat, ELaux and NGheat.</p>
+            <EndUseDoc></EndUseDoc>
         </>
     )
 }

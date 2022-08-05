@@ -3,8 +3,12 @@ import { ListGroup } from "react-bootstrap";
 import MainInterface from "./subdoc/mainInterface";
 import ProjectDoc from "./subdoc/projectDoc";
 import ScenarioDoc from "./subdoc/scenarioDoc";
-import ScenarioLeftHand from "./subdoc/scenarioLeftHand";
-import ScenarioRightHand from "./subdoc/scenarioRightHand";
+import DesignLeftHand from "./subdoc/designLeftHand";
+import DesignRightHand from "./subdoc/designRightHand";
+import ScenarioFullDoc from "./subdoc/scenarioFull";
+import VisualizerCompareDoc from "./subdoc/visualizeCompareDoc";
+import VisualizerOpportunityDoc from "./subdoc/visualizeOpportunityDoc";
+import VisualizerReportDoc from "./subdoc/visualizeReport";
 
 export default function DocumentationPage(){
 
@@ -16,9 +20,14 @@ export default function DocumentationPage(){
             <ListGroup as ="ol" numbered>
                 <ListGroup.Item as="li"><a href="#maininterface">Main interface</a></ListGroup.Item>
                 <ListGroup.Item as="li"><a href="#projectDoc">Project</a></ListGroup.Item>
-                <ListGroup.Item as="li"><a href="#scenarioDoc">Scenario</a></ListGroup.Item>
-                <ListGroup.Item as="li"><a href="#scenarioLeftHand">Scenario: Left</a></ListGroup.Item>
-                <ListGroup.Item as="li"><a href="#scenarioRightHand">Scenario: Right</a></ListGroup.Item>
+                <ListGroup.Item as="li"><a href="#scenarioDoc">Scenario: Start</a></ListGroup.Item>
+                <ListGroup.Item as="li"><a href="#designLeftHand">Design: Left</a></ListGroup.Item>
+                <ListGroup.Item as="li"><a href="#designRightHand">Design: Right</a></ListGroup.Item>
+                <ListGroup.Item as="li"><a href="#scenarioFull">Scenario: List</a></ListGroup.Item>
+                <ListGroup.Item as="li"><a href="#visualizeCompare">Visualization: Compare</a></ListGroup.Item>
+                <ListGroup.Item as="li"><a href="#visualizeOpportunity">Visualization: Saving Opportunity</a></ListGroup.Item>
+                <ListGroup.Item as="li"><a href="#visualizeReport">Visualization: Report</a></ListGroup.Item>
+
             </ListGroup>
             <hr style={{marginTop: "30px", marginBottom: "30px"}}></hr>
             <div id="maininterface" style={{marginTop: "20px"}}>
@@ -33,17 +42,37 @@ export default function DocumentationPage(){
             <hr style={{marginTop: "30px", marginBottom: "30px"}}></hr>
             <div id="scenarioDoc" style={{marginTop: "20px"}}>
                 <ScenarioDoc></ScenarioDoc>
-                <a href="#scenarioDoc">Back</a>
+                <a href="#doc-top">Back</a>
             </div>
             <hr style={{marginTop: "30px", marginBottom: "30px"}}></hr>
-            <div id="scenarioLeftHand" style={{marginTop:"20px"}}>
-                <ScenarioLeftHand></ScenarioLeftHand>
-                <a href="#scenarioDoc">Back</a>
+            <div id="designLeftHand" style={{marginTop:"20px"}}>
+                <DesignLeftHand></DesignLeftHand>
+                <a href="#doc-top">Back</a>
             </div>
             <hr style={{marginTop: "30px", marginBottom: "30px"}}></hr>
-            <div id="scenarioRightHand" style={{marginTop:"20px"}}>
-                <ScenarioRightHand></ScenarioRightHand>
-                <a href="#scenarioDoc">Back</a>
+            <div id="designRightHand" style={{marginTop:"20px"}}>
+                <DesignRightHand></DesignRightHand>
+                <a href="#doc-top">Back</a>
+            </div>
+            <hr style={{marginTop: "30px", marginBottom: "30px"}}></hr>
+            <div id="scenarioFull" style={{marginTop:"20px"}}>
+                <ScenarioFullDoc></ScenarioFullDoc>
+                <a href="#doc-top">Back</a>
+            </div>
+            <hr style={{marginTop: "30px", marginBottom: "30px"}}></hr>
+            <div id="visualizeCompare" style={{marginTop:"20px"}}>
+                <VisualizerCompareDoc></VisualizerCompareDoc>
+                <a href="#doc-top">Back</a>
+            </div>
+            <hr style={{marginTop: "30px", marginBottom: "30px"}}></hr>
+            <div id="visualizeOpportunity" style={{marginTop:"20px"}}>
+                <VisualizerOpportunityDoc></VisualizerOpportunityDoc>
+                <a href="#doc-top">Back</a>
+            </div>
+            <hr style={{marginTop: "30px", marginBottom: "30px"}}></hr>
+            <div id="visualizeReport" style={{marginTop:"20px"}}>
+                <VisualizerReportDoc></VisualizerReportDoc>
+                <a href="#doc-top">Back</a>
             </div>
         </>
     )

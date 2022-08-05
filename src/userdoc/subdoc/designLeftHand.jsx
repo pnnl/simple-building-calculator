@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import ECMParamDoc from "./ecmParamDoc";
 import { Button, Modal } from "react-bootstrap";
 
-export default function ScenarioLeftHand(){
+export default function DesignLeftHand(){
       //modal function
     const[show, setShow] = useState(false);
     const handleClose = () => setShow(false);
@@ -10,7 +10,7 @@ export default function ScenarioLeftHand(){
 
     return (
         <>
-            <h5>Scenario Left-Hand Side</h5>
+            <h5>Design Left-Hand Side</h5>
             <img src={"/simple-building-calculator/img/scenario_section_small.png"} style={{height: "600px"}} alt="scenario_section"/>
             <p><span style={{fontFamily: "Courier New"}}>Standard </span>is used to select the relevant building energy code standards from ASHRAE 90.1, IECC 2021 (International Energy Conservation Code) or custom. </p>
             <p><span style={{fontFamily: "Courier New"}}>HVAC </span>currently includes Packaged VAV with electric reheat for the Medium Office and Packaged single zone air-conditioner with natural gas heat for the Strip Mall, that will be the default based on the project building typology chosen for the project. </p>
