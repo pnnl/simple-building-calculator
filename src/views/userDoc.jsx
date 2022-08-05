@@ -18,9 +18,8 @@ function Manual(){
                                 <ListGroup.Item action href="#documentation">
                                     Documentation
                                 </ListGroup.Item>
-                                <ListGroup.Item action href="#limitations">
-                                    Limitations
-                                </ListGroup.Item>
+                                {/*<ListGroup.Item action href="#limitations">
+                                    Limitations</ListGroup.Item>*/}
                             </ListGroup>
                         </Col>
                         <Col sm={10}>
@@ -31,9 +30,9 @@ function Manual(){
                                 <Tab.Pane eventKey="#documentation">
                                     <DocumentationPage/>
                                 </Tab.Pane>
-                                <Tab.Pane eventKey="#limitations">
+                                {/*<Tab.Pane eventKey="#limitations">
                                     <p>Placeholder</p>
-                                </Tab.Pane>
+                                </Tab.Pane>*/}
                             </Tab.Content>
                         </Col>
                     </Row>
