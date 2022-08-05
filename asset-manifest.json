@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/simple-building-calculator/static/css/main.9dfac3cb.chunk.css",
-    "main.js": "/simple-building-calculator/static/js/main.ae1a0bbd.chunk.js",
-    "main.js.map": "/simple-building-calculator/static/js/main.ae1a0bbd.chunk.js.map",
+    "main.css": "/simple-building-calculator/static/css/main.d24d3069.chunk.css",
+    "main.js": "/simple-building-calculator/static/js/main.5fcaccf8.chunk.js",
+    "main.js.map": "/simple-building-calculator/static/js/main.5fcaccf8.chunk.js.map",
     "runtime-main.js": "/simple-building-calculator/static/js/runtime-main.12194c43.js",
     "runtime-main.js.map": "/simple-building-calculator/static/js/runtime-main.12194c43.js.map",
     "static/css/2.20c5827a.chunk.css": "/simple-building-calculator/static/css/2.20c5827a.chunk.css",
@@ -12,7 +12,7 @@
     "static/js/3.02f75f0b.chunk.js.map": "/simple-building-calculator/static/js/3.02f75f0b.chunk.js.map",
     "index.html": "/simple-building-calculator/index.html",
     "static/css/2.20c5827a.chunk.css.map": "/simple-building-calculator/static/css/2.20c5827a.chunk.css.map",
-    "static/css/main.9dfac3cb.chunk.css.map": "/simple-building-calculator/static/css/main.9dfac3cb.chunk.css.map",
+    "static/css/main.d24d3069.chunk.css.map": "/simple-building-calculator/static/css/main.d24d3069.chunk.css.map",
     "static/js/2.720976ab.chunk.js.LICENSE.txt": "/simple-building-calculator/static/js/2.720976ab.chunk.js.LICENSE.txt",
     "static/media/font-awesome.min.css": "/simple-building-calculator/static/media/fontawesome-webfont.f691f37e.woff"
   },
@@ -20,7 +20,7 @@
     "static/js/runtime-main.12194c43.js",
     "static/css/2.20c5827a.chunk.css",
     "static/js/2.720976ab.chunk.js",
-    "static/css/main.9dfac3cb.chunk.css",
-    "static/js/main.ae1a0bbd.chunk.js"
+    "static/css/main.d24d3069.chunk.css",
+    "static/js/main.5fcaccf8.chunk.js"
   ]
 }
