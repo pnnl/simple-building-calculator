@@ -117,6 +117,8 @@ function Home() {
                 <h4>For detailed information:</h4>
                 <p>Nambiar, Chitra, and Reid Hart. "SIMPLE BUILDING CALCULATOR." In <i>ASHRAE Topical Conference Proceedings</i>, pp. 423-430. American Society of Heating, Refrigeration and Air Conditioning Engineers, Inc., 2020. <a href="/simple-building-calculator/doc/d-bsc20-c051.pdf">Read</a></p>
                 <p>Hart, Reid, Chitra Chandrasekharan Nambiar, Jeremiah Williams, and Michael Reiner. "An Energy Calculator for Simple Commercial Buildings." (2020). <a href="/simple-building-calculator/doc/143_0376_0549_000237.pdf">Read</a></p>
+                <h5>Feedbacks:</h5>
+                <p>Click the <a href="https://docs.google.com/forms/d/10R37Dqbc-T80NYIk-7JumZ8OISeIEyZsmQy_wWvre1M/viewform?edit_requested=true">Feedback form</a> to request the features you would like to see in SBC!</p>
               </div>
             </animated.div>
           </Col>
